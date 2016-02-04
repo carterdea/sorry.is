@@ -32,29 +32,57 @@
           We’d love hear from you. Reach out and let us know what you’re doing or just say hello
           <img width="14px" class="wave" src="../images/wave.png" />
         </p>
-        <!-- %form -->
-        <!-- .form-item -->
-        <!-- %input{placeholder: 'Your name'} -->
-        <!-- .form-item -->
-        <!-- %input{placeholder: 'Your email'} -->
-        <!-- .form-control -->
-        <!-- %select -->
-        <!-- %option{ selected: true, disabled: true } Your budget -->
-        <!-- %option $10,000 - $24,999 -->
-        <!-- %option $25,000 - $49,999 -->
-        <!-- %option $50,000 - $100,000 -->
-        <!-- .form-item -->
-        <!-- %textarea{placeholder: 'Tell us about what you\'re working on'} -->
-        <!-- .form-item -->
-        <!-- %input{type: 'submit', value: 'Send'} -->
-        <!-- %p We'll get back to you within 48 hours. -->
-        <ul class='no-style'>
-          <li>New Business: <a href="mailto:makesomething@sorry.com">makesomething@sorry.com</a></li>
-          <li>Opportunities: <a href="mailto:work@sorry.com">work@sorry.com</a></li>
-          <li>General Inquiries: <a href="mailto:hello@sorry.com">hello@sorry.com</a></li>
-        </ul>
+        <div class='clearfix'>
+          <form accept-charset='UTF-8' action='https://formkeep.com/f/1289012036b3' method='POST'>
+            <div class='form-item'>
+              <input name='name' placeholder='Your name' required>
+            </div>
+            <div class='form-item'>
+              <input name='name' placeholder='Your email' required type='email'>
+            </div>
+            <div class='form-item'>
+              <select name='budget' required>
+                <option disabled selected>Your budget</option>
+                <option>$25,000 - $50,000</option>
+                <option>$50,000 - $100,000</option>
+                <option>$100,001+</option>
+              </select>
+            </div>
+            <div class='form-item'>
+              <textarea name='message' placeholder="Tell us about what you're working on" required></textarea>
+            </div>
+            <input class='button' name='utf8' type='hidden' value='✓'>
+            <div class='form-item'>
+              <button type='submit'>Send</button>
+            </div>
+            <p>We'll get back to you within 48 hours.</p>
+          </form>
+          <ul class='no-style'>
+            <li>New Business: <a href="mailto:makesomething@sorry.is">makesomething@sorry.is</a></li>
+            <li>Opportunities: <a href="mailto:work@sorry.is">work@sorry.is</a></li>
+            <li>General Inquiries: <a href="mailto:hello@sorry.is">hello@sorry.is</a></li>
+          </ul>
+        </div>
         <h3>based in Los Angeles, CA</h3>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.13.1/mapbox-gl.js'></script>
+        <script>
+          var url = window.location.href;
+          var captured = /thanks=([^&]+)/.exec(url)[1];
+          var result = captured ? captured : 'myDefaultValue';
+        </script>
       </div>
+      <!-- / if you're on the contact page, show the map under the footer -->
+      <div id='map'></div>
+      <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2FydGVyZGVhIiwiYSI6IjhPS0FRaXcifQ.ww0vsEmblI_6aYxEQO_acA';
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/carterdea/cik7a9xbk00cxnykosa8arxb1', //stylesheet location
+            center: [-118.498693, 34.017084], // starting position
+            zoom: 12, // starting zoom
+            interactive: false
+        });
+      </script>
       <footer>
         <div class='container'>
           <div>
